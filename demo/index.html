@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>Up-files demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../up-files.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+      .fileList  {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 24px auto;
+        padding: 0;
+        list-style-type: none;
+      }
+
+      .fileList-item {
+        width: calc(33% - 16px);
+        margin-left: 8px;
+        margin-right: 8px;
+        margin-bottom: 32px;
+        text-align: center;
+        position: relative
+      } 
+
+      .fileList-item-close {
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        right: -5px;
+        width: 10px;
+        height: 10px;
+        background: gray;
+        transform: rotate(-45deg);
+        cursor:  pointer;
+        border-radius: 50%;
+        line-height: 10px;
+        color: #fff;
+        padding: 5px;
+        cursor: pointer;
+      }
+
+      .fileList-item-imgwrap {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                    0 1px 5px 0 rgba(0, 0, 0, 0.12),
+                    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 8px;
+        height: 120px;
+        position: relative;
+      }
+      
+      .fileList-item-imgwrap img {
+        max-width: 100%;
+      }
+
+      .fileList-item-imgwrap * {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);        
+      }
+
+      .file-placeholder {
+        overflow: initial !important;
+        width: 50px;
+        height: 75px;
+        border: 1px solid #000;
+        border-right: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+      }
+
+      .file-placeholder:after {
+        position: absolute;
+        content: '';
+        top: 4px;
+        right: -13px;
+        border-top: 10px solid #000;
+        border-left: 10px solid transparent; 
+        border-right: 10px solid transparent;
+        transform: rotate(45deg);     
+      }
+
+      .file-placeholder:before {
+        position: absolute;
+        content: '';
+        top: 12px;
+        right: -13px;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+        height: 84%;
+        width: 12px;    
+      }
+
+      .fileList li div {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic up-files demo</h3>
+      <demo-snippet>
+        <template>
+          <up-files></up-files>
+        </template>
+      </demo-snippet>
+
+    </div>
+
+  </body>
+</html>
